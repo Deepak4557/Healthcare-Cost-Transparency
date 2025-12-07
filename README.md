@@ -1,54 +1,131 @@
-# Promoting Transparent and Predictable Healthcare Costs for Students
+🌟 Promoting Transparent and Predictable Healthcare Costs for Students
 
-## Project Overview
-This project aims to help students understand healthcare costs in a clear and simple way.  
-Many students avoid or delay medical care because they are unsure how much they will have to pay.
-We built an automated data pipeline on AWS that processes healthcare claim data and shows insights
-through an interactive Power BI dashboard.
+A Fully Automated AWS Data Pipeline + Power BI Dashboard
 
-## Architecture
-Our solution uses the following AWS services:
-- **Amazon S3** – stores raw and transformed data
-- **AWS Lambda** – triggers the ETL job when a CSV file is uploaded
-- **AWS Glue** – cleans and transforms the data and writes it in Parquet format
-- **Glue Crawler** – updates the Data Catalog with the latest schema
-- **Amazon Athena** – queries the transformed data
-- **Power BI** – visualizes key metrics for students
+📌 Project Overview
 
-## Data Pipeline Flow
-1. Upload a healthcare claims CSV file into the S3 source bucket.
-2. An S3 event triggers a Lambda function.
-3. Lambda starts an AWS Glue ETL job.
-4. Glue cleans, transforms, and writes data to the target S3 bucket in Parquet format.
-5. A Glue Crawler updates the Data Catalog.
-6. Athena queries the latest data.
-7. Power BI connects to Athena and displays dashboards for students.
+Students often struggle to understand how much they will pay for medical care because healthcare prices and insurance coverage are unclear. This leads to confusion, stress, and delayed treatment.
 
-## Dashboard Highlights
-The Power BI dashboard shows:
-- Total paid amount
-- Total billed amount
-- Member count
-- Provider type–wise member count
-- Specialty-wise member count
-- Diagnosis-wise trends
-- Year-wise member count
+Our project solves this problem by building an automated cloud system that processes healthcare claim data and presents it in a simple, easy-to-read dashboard. The system runs end-to-end with minimal manual work and helps students gain clear insights into healthcare costs.
 
-## How to Run (High Level)
-1. Upload a CSV file into the S3 source bucket.
-2. Wait for the Lambda + Glue pipeline to complete.
-3. Confirm the data in Athena using SQL queries.
-4. Refresh your Power BI report connected to Athena.
-5. Explore the dashboard visuals.
+🚀 Key Features
 
-## Team Members
-- Deepak
-- Trinath
-- Satish
-- Kavya
+Fully automated AWS pipeline triggered by file upload
 
-## Technologies Used
-- AWS S3, Lambda, Glue, Glue Crawler, Athena
-- Python (Glue ETL, Lambda)
-- Power BI
-- Parquet, CSV
+Clean and standardized data ready for analysis
+
+Fast SQL querying using Amazon Athena
+
+Interactive Power BI dashboard for simple cost insights
+
+Scalable architecture ready for future real-time and predictive analytics
+
+User-friendly design suitable even for non-technical students
+
+🏗️ Architecture Overview
+
+Our system uses the following AWS services:
+
+Component	Purpose
+Amazon S3	Stores raw and processed healthcare data
+AWS Lambda	Automatically triggers ETL when a CSV is uploaded
+AWS Glue ETL	Cleans, transforms, and prepares data for analytics
+Glue Crawler	Updates schema and metadata in the Data Catalog
+Amazon Athena	Runs SQL queries on transformed data
+Power BI	Displays insights through an interactive dashboard
+🔄 End-to-End Data Pipeline Flow
+
+Upload a healthcare CSV file into the S3 source bucket
+
+Lambda detects the upload and triggers the ETL job
+
+AWS Glue cleans and transforms the data
+
+Output is saved as Parquet in the target S3 bucket
+
+Glue Crawler updates the Data Catalog
+
+Athena queries the latest cleaned data
+
+Power BI visualizes the results for easy student understanding
+
+📊 Dashboard Insights
+
+Our Power BI dashboard provides clear visual insights, including:
+
+💰 Total Paid Amount
+
+🧾 Total Billed Amount
+
+👥 Member Count
+
+🏥 Provider Type–Wise Member Count
+
+🩺 Specialty-Wise Member Count
+
+🧬 Diagnosis Trends
+
+📅 Year-Wise Member Count
+
+The dashboard is simple, interactive, and built specifically for student users.
+
+📝 How to Run the System
+
+Upload a new CSV to your S3 source bucket
+
+Wait for the automated pipeline to run (Lambda → Glue → Crawler)
+
+Open Athena and verify the latest data
+
+Refresh Power BI report connected to Athena
+
+View updated insights instantly
+
+👨‍💻 Technologies Used
+
+AWS S3
+
+AWS Lambda
+
+AWS Glue ETL
+
+AWS Glue Crawler
+
+Amazon Athena
+
+Python
+
+Power BI
+
+Parquet & CSV formats
+
+👥 Team Members
+
+Deepak
+
+Trinath
+
+Satish
+
+Kavya
+
+🎯 Project Goal
+
+To empower students with clear, reliable, and predictable healthcare cost information through an automated data engineering solution.
+
+📂 Repository Structure (Suggested)
+/scripts          → Lambda + Glue ETL scripts
+/data             → Sample CSV or synthetic dataset
+/dashboard        → Power BI screenshots or PBIX file
+/docs             → Technical report, presentation, diagrams
+README.md
+
+🙌 Acknowledgements
+
+AWS Documentation
+
+Power BI Community
+
+CRISP-DM Framework
+
+Instructors and Teaching Assistants
